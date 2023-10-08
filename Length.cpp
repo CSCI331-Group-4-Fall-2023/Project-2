@@ -1,51 +1,29 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <vector>
 #include <string>
 
-std::string processLine(const std::string &line) {
-    std::istringstream iss(line);
-    std::string token;
-    std::string result = "";
-    
-    // Count the number of characters in this line (not including commas)
-    int len = 0;
-    while (std::getline(iss, token, ',')) {
-        len += token.size();
-    }
-
-    // Add the length to the result without a comma
-    result += std::to_string(len);
-    result += line;
-
-    return result;
-}
-
 int main() {
-    std::ifstream infile("us_postal_codes.csv");
-    std::ofstream outfile("length_indicated.txt");
+    std::ifstream inFile("us_postal_codes.csv"); // Change this to your input CSV file path
+    std::ofstream outFile("Length.txt"); // Output file
 
-    if (!infile) {
-        std::cerr << "Error opening input file." << std::endl;
-        return 1;
-    }
-
-    if (!outfile) {
-        std::cerr << "Error opening output file." << std::endl;
+    if (!inFile.is_open()) {
+        std::cerr << "Failed to open input file." << std::endl;
         return 1;
     }
 
     std::string line;
-    std::getline(infile, line);  // Skip header
+    // Skip the header
+    std::getline(inFile, line);
 
-    while (std::getline(infile, line)) {
-        outfile << processLine(line) << std::endl;
+    while (std::getline(inFile, line)) {
+        // Write the length of the record followed by a comma and then the record itself
+        outFile << line.length()+1 << "," << line << std::endl;
     }
 
-    infile.close();
-    outfile.close();
+    inFile.close();
+    outFile.close();
 
-    std::cout << "Conversion complete!" << std::endl;
+    std::cout << "Conversion done!" << std::endl;
     return 0;
 }
