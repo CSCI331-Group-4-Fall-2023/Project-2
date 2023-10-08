@@ -92,7 +92,6 @@ void ZipcodeBuffer::setFromFile(string fileLine) {
         string columnName = headerMap[pos];
 
         if (columnName == "ZipCode") {
-            // cout << field << " " << "\n";
             zipcode = std::stoi(field);
         } else if (columnName == "PlaceName") {
             city = field;
