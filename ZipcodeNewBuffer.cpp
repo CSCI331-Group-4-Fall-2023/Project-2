@@ -1,5 +1,3 @@
-// Code from Zachary
-
 #include "ZipcodeNewBuffer.h" 
 #include <sstream> //For stringstream
 #include <string> //For getline
@@ -89,12 +87,13 @@ bool ZipcodeNewBuffer::setHeaderMap(string fileName)
     // with the newHeader csv file and delete the old newHeader csv file
     char filename[fileName.size() + 1];
     strcpy(filename, fileName.c_str());
+    inFile.close();
     remove(filename);
 
-    char newheader[newHeader.size() + 1];
-    strcpy(newheader, newHeader.c_str());
-    rename(newheader, filename);
-    remove(newheader);
+    char newfile[newFile.size() + 1];
+    strcpy(newfile, newFile.c_str());
+    file.close();
+    rename(newfile, filename);
 
 
     // try to find a method to overwrite the fileName csv file with the newFile csv file
@@ -120,6 +119,7 @@ void ZipcodeNewBuffer::printHeaderMap()
             cout << headerMap[iter] << " ";
             iter++;
         }
+        cout << endl;
     }
     
 }

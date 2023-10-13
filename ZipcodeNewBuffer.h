@@ -1,5 +1,3 @@
-// Code from Zachary
-
 #ifndef ZIPCODENEWBUFFER_H
 #define ZIPCODENEWBUFFER_H
 
