@@ -83,12 +83,12 @@ int main(int argc, char* argv[]) {
           int rnn = indexMap[zipCodeIntegers[i]];
            inFile.clear();
            inFile.seekg(rnn, ios::beg);
-           string test;
-           getline(inFile, test);
-           cout << test;
-           
-
-
+           string line_temp;
+           getline(inFile, line_temp);
+                ZipcodeBuffer temp;
+                temp.setFromFile(line_temp);
+                cout << temp;
+           }
     }
 
     return 0;

@@ -1,7 +1,7 @@
 /**
  * \file ZipcodeBuffer.h
- * \author Andrew Clayton and Mergen Ganbaatar
- * \version 1.2
+ * \author Andrew Clayton
+ * \version 1.4
  * \brief This header file defines the ZipcodeBuffer class, which is used to take in and store data from a Zipcode CSV file.
  * 
  * ZipcodeBuffer class: File to work with Zipcode CSV file
