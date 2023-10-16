@@ -10,6 +10,8 @@
 #include <sstream> //For stringstream
 #include <string> //For getline
 
+using namespace std;
+
 //Default constructor
 ZipcodeBuffer::ZipcodeBuffer() {
     zipcode = 0;

@@ -6,6 +6,7 @@
 #include <string> // for getline
 #include <fstream> // for file reading
 #include <unordered_map>
+#include <vector>
 
 // Authors: Tristan Adams and Andrew Clayton
 using namespace std;
@@ -17,7 +18,7 @@ using namespace std;
  * 
  * @return 0 on successful execution, -1 on error.
  */
-int main() {
+int main(int argc, char* argv[]) {
     // Makes a hashmap to hold zipcodes and the RRN (relative reference number) that go with them
     unordered_map<int, int> indexMap; 
 
@@ -60,6 +61,14 @@ int main() {
 
     // Display whatever zipcodes are indicated in the command line arguments
     // also make sure that command line arguments are accommodated 
+    if (argc <= 1) {
+        cout << "No zipcodes given\n";
+    } else {
+        vector<int> zipcodes;
+        for (int i = 1; i < argc; i++) {
+            // 
+        }
+    }
 
     return 0;
 }
