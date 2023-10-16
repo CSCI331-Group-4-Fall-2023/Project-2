@@ -66,18 +66,16 @@ int main(int argc, char* argv[]) {
     } else {
        vector<int> zipCodeIntegers;
 
-    for (const char* zip : argv) {
-        try {
-            // Convert each character array to an integer using std::stoi
-            int intValue = stoi(zip);
+        for (int i = 1; i < argc; ++i) {
+            try {
+                // Convert each command line argument (C-string) to an integer using atoi
+             int intValue = atoi(argv[i]);
 
-            // Add the integer to the vector
-            zipCodeIntegers.push_back(intValue);
-        } catch (const invalid_argument& e) {
-            cerr << "Invalid argument: " << e.what() << endl;
-        } catch (const out_of_range& e) {
-            cerr << "Out of range: " << e.what() << endl;
-        }
+             // Add the integer to the vector
+                zipCodeIntegers.push_back(intValue);
+            } catch (const invalid_argument& e) {
+                cerr << "Invalid argument: " << e.what() << endl;
+            }
     }
 
     }
