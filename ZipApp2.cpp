@@ -89,9 +89,6 @@ int main(int argc, char* argv[]) {
                 temp.setFromFile(line_temp);
                 cout << temp;
            }
-           
-
-
     }
 
     return 0;
