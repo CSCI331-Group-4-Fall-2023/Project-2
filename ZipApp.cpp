@@ -25,7 +25,7 @@ int main() {
     // Buffer to extract CSV data
     ZipcodeBuffer zipHolder; 
     // ifstream inFile("us_postal_codes_ROWS_RANDOMIZED.csv");
-    ifstream inFile("us_postal_codes.csv");
+    ifstream inFile("Length_R.csv");
     if (!inFile) {
         cout << "Error opening file" << endl;
         return -1;

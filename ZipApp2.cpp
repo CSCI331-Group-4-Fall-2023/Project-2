@@ -20,7 +20,7 @@ using namespace std;
  */
 int main(int argc, char* argv[]) {
     // Makes a hashmap to hold zipcodes and the RRN (relative reference number) that go with them
-    unordered_map<int, int> indexMap; 
+    unordered_map<int, long long> indexMap; 
 
     // Buffer to extract CSV data
     ZipcodeBuffer zipHolder; 
@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
     // Creating new file for Index file (assuming there is not already one)
     ofstream indexFile("indexFile.txt");
 
-    int rrn = 0; 
+    long long rrn = 0; 
     while (getline(inFile, line)) {
         // Skip header line
         if(first) {
@@ -80,14 +80,21 @@ int main(int argc, char* argv[]) {
         }
         //once the vector is made we can search through the whole vector and display the record that the zipcode grabs from the index
         for (int i = 0; i < count; ++i) {
-          int rnn = indexMap[zipCodeIntegers[i]];
-           inFile.clear();
-           inFile.seekg(rnn, ios::beg);
-           string line_temp;
-           getline(inFile, line_temp);
-                ZipcodeBuffer temp;
-                temp.setFromFile(line_temp);
-                cout << temp;
+            // cout << "Count: " << count << "\n";
+            long long rnn = indexMap[zipCodeIntegers[i]];
+
+            inFile.clear();
+            inFile.seekg(0, ios::beg); //resetting the pointer to the start of the file
+
+
+            inFile.seekg(rnn, ios::beg);
+            string line_temp;
+            getline(inFile, line_temp);
+            ZipcodeBuffer temp;
+            temp.setFromFile(line_temp);
+            cout << temp;
+            cout << rnn << "\n";
+            cout << line_temp;
            }
     }
 
