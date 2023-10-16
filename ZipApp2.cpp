@@ -64,19 +64,19 @@ int main(int argc, char* argv[]) {
     if (argc <= 1) {
         cout << "No zipcodes given\n";
     } else {
-       std::vector<int> zipCodeIntegers;
+       vector<int> zipCodeIntegers;
 
-        for (const char* zip : argv) {
+    for (const char* zip : argv) {
         try {
             // Convert each character array to an integer using std::stoi
-            int intValue = std::stoi(zip);
+            int intValue = stoi(zip);
 
             // Add the integer to the vector
             zipCodeIntegers.push_back(intValue);
-        } catch (const std::invalid_argument& e) {
-            std::cerr << "Invalid argument: " << e.what() << std::endl;
-        } catch (const std::out_of_range& e) {
-            std::cerr << "Out of range: " << e.what() << std::endl;
+        } catch (const invalid_argument& e) {
+            cerr << "Invalid argument: " << e.what() << endl;
+        } catch (const out_of_range& e) {
+            cerr << "Out of range: " << e.what() << endl;
         }
     }
 
