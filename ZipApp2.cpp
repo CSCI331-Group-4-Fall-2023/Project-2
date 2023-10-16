@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     ZipcodeBuffer zipHolder; 
 
     // ifstream inFile("us_postal_codes_ROWS_RANDOMIZED.csv");
-    ifstream inFile("length_R");
+    ifstream inFile("Length_R.csv");
     if (!inFile) {
         cout << "Error opening file" << endl;
         return -1;
