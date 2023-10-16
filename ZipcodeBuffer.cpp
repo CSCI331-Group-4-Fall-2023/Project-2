@@ -142,7 +142,7 @@ int ZipcodeBuffer::getLength() const {
     return length;
 }
 
-int ZipcodeBuffer::setLength(int len) {
+void ZipcodeBuffer::setLength(int len) {
     length = len;
 }
 

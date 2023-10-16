@@ -56,7 +56,6 @@ int main() {
 
         //updating the rrn will be the last step of the loop
         rrn += zipHolder.getLength() + rrn;
-
     }
 
     // Display whatever zipcodes are indicated in the command line arguments
