@@ -142,8 +142,8 @@ int ZipcodeBuffer::getLength() const {
     return length;
 }
 
-int ZipCodeBuffer::setLength(int l) const {
-    length = l;
+int ZipcodeBuffer::setLength(int len) {
+    length = len;
 }
 
 

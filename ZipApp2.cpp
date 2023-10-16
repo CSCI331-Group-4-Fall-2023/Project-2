@@ -34,8 +34,8 @@ int main() {
     bool first = true;
     string line;
 
-    // Creating new file for Index 
-
+    // Creating new file for Index file (assuming there is not already one)
+    ofstream indexFile("indexFile.txt");
 
     int rrn = 0; 
     while (getline(inFile, line)) {
@@ -48,14 +48,14 @@ int main() {
 
         // Set values from the current CSV line
         zipHolder.setFromFile(line);
-        string stateId = zipHolder.getState();
 
-        indexMap.put(zipHolder.getZipcode(), zipHolder.getLength());
         indexMap[zipHolder.getZipcode()] = rrn;
 
-        rrn += currentRow.getLength() + rrn;
-
         // Write the key and value to an index file
+        indexFile << zipHolder.getZipcode() << " " << rrn << endl;
+
+        //updating the rrn will be the last step of the loop
+        rrn += zipHolder.getLength() + rrn;
 
     }
 
