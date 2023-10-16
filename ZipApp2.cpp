@@ -80,9 +80,16 @@ int main(int argc, char* argv[]) {
         }
         //once the vector is made we can search through the whole vector and display the record that the zipcode grabs from the index
         for (int i = 0; i < count; ++i) {
-            indexMap(zipCodeIntegers[i]
-
-        }
+          int rnn = indexMap[zipCodeIntegers[i]];
+           inFile.clear();
+           inFile.seekg(rnn, ios::beg);
+           string line_temp;
+           getline(inFile, line_temp);
+                ZipcodeBuffer temp;
+                temp.setFromFile(line_temp);
+                cout << temp;
+           }
+           
 
 
     }
