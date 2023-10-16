@@ -5,6 +5,7 @@
 #include <sstream> // for string stream
 #include <string> // for getline
 #include <fstream> // for file reading
+#include <unordered_map>
 
 // Authors: Tristan Adams and Andrew Clayton
 using namespace std;
@@ -12,15 +13,13 @@ using namespace std;
 /**
  * @brief Main function to populate and display a table of StateRow objects using a map.
  * 
- * The main function reads from a CSV file, populates a map with StateRow objects
- * indexed by state ID, and displays the final table of states with their easternmost, 
- * westernmost, northernmost, and southernmost zip codes.
+ * -----------------------------------------------------------------------------------------------------
  * 
  * @return 0 on successful execution, -1 on error.
  */
 int main() {
     // Makes a hashmap to hold zipcodes and the RRN (relative reference number) that go with them
-    map<int, int> indexMap; 
+    unordered_map<int, int> indexMap; 
 
     // Buffer to extract CSV data
     ZipcodeBuffer zipHolder; 
@@ -34,6 +33,11 @@ int main() {
 
     bool first = true;
     string line;
+
+    // Creating new file for Index 
+
+
+    int rrn = 0; 
     while (getline(inFile, line)) {
         // Skip header line
         if(first) {
@@ -46,11 +50,12 @@ int main() {
         zipHolder.setFromFile(line);
         string stateId = zipHolder.getState();
 
-        // Initialize or get reference to the StateRow object for the current state
-        StateRow& currentRow = stateMap[stateId];
-        indexMap.put(zipHolder.getZipcode(), /* RRN*/ );
+        indexMap.put(zipHolder.getZipcode(), zipHolder.getLength());
+        indexMap[zipHolder.getZipcode()] = rrn;
 
+        rrn += currentRow.getLength() + rrn;
 
+        // Write the key and value to an index file
 
     }
 

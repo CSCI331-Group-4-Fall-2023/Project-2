@@ -1,7 +1,7 @@
 /**
  * \file ZipcodeBuffer.cpp
  * \author Andrew Clayton
- * \version 1.2
+ * \version 1.4
  * \brief Implementation file for ZipcodeBuffer class.
  */
 
