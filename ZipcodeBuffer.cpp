@@ -84,7 +84,17 @@ void ZipcodeBuffer::setLongitude(double longitude) {
 //Other functions
 
 void ZipcodeBuffer::setFromFile(string fileLine) {
-    stringstream ss(fileLine);
+    // Extract the first two characters and convert them to an integer
+    if (fileLine.size() >= 2) {
+        length = std::stoi(fileLine.substr(0, 2));
+    } else {
+        // Handle the case where the fileLine is shorter than 2 characters
+        // For now, I'll set length to 0, but you may want to handle this differently
+        length = 0;
+    }
+
+    // Picks up after the first two characters (after the length indication)
+    stringstream ss(fileLine.substr(2));
     string field;
     int pos = 0;
 
@@ -112,7 +122,8 @@ void ZipcodeBuffer::setFromFile(string fileLine) {
 
 
 void ZipcodeBuffer::setHeaderMap(const string& headerLine) {
-    stringstream ss(headerLine);
+    // Picks up after the length indication
+    stringstream ss(headerLine.substr(2));
     string field;
     int pos = 0;
 
@@ -125,6 +136,14 @@ void ZipcodeBuffer::setHeaderMap(const string& headerLine) {
         headerMap[pos] = field;
         pos++;
     }
+}
+
+int ZipcodeBuffer::getLength() const {
+    return length;
+}
+
+int ZipCodeBuffer::setLength(int l) const {
+    length = l;
 }
 
 
@@ -142,3 +161,4 @@ ostream& operator<<(ostream& out, const ZipcodeBuffer& buffer) {
     out << buffer.zipcode << ", " << buffer.city << ", " << buffer.state << ", " << buffer.county << ", " << buffer.latitude << ", " << buffer.longitude;
     return out;
 }
+

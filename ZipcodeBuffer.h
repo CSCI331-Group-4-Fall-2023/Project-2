@@ -24,6 +24,9 @@ using namespace std;
  */
 class ZipcodeBuffer {
     private:
+        /// @brief  The length of the line in the CSV file.
+        int length;
+
         /// \brief Zipcode as an integer.
         int zipcode;
         
@@ -118,6 +121,17 @@ class ZipcodeBuffer {
         */
         double getLongitude() const;
 
+        // A getter for the length attribute
+        /**
+         * \brief Getter for length
+         * \pre ZipcodeBuffer object must exist
+         * \post None
+         * \return Integer value of length
+        */
+        int getLength() const;
+
+        
+
         //Setters
         /**
          * \brief Setter for zipcode
@@ -174,6 +188,14 @@ class ZipcodeBuffer {
          * \post ZipcodeBuffer object's attributes are set to the values in the given string
         */
         void setFromFile(string fileLine);
+
+        /**
+         * \brief Setter for length
+         * \param length Integer value of length
+         * \pre ZipcodeBuffer object must exist
+         * \post ZipcodeBuffer object's length attribute is set to the given value
+        */
+        void setLength(int length);
 
 
 
