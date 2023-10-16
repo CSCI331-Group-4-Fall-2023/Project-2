@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
         cout << "No zipcodes given\n";
     } else {
        vector<int> zipCodeIntegers;
-
+        int count = 0;
         for (int i = 1; i < argc; ++i) {
             try {
                 // Convert each command line argument (C-string) to an integer using atoi
@@ -73,10 +73,17 @@ int main(int argc, char* argv[]) {
 
              // Add the integer to the vector
                 zipCodeIntegers.push_back(intValue);
+                count++;
             } catch (const invalid_argument& e) {
                 cerr << "Invalid argument: " << e.what() << endl;
             }
-    }
+        }
+        //once the vector is made we can search through the whole vector and display the record that the zipcode grabs from the index
+        for (int i = 0; i < count; ++i) {
+            indexMap(zipCodeIntegers[i]
+
+        }
+
 
     }
 
