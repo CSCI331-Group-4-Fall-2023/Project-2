@@ -10,7 +10,7 @@
 using namespace std;
 
 /**
- * @brief Main function to populate and display a table of StateRow objects using a map.
+ * @brief Project 2 Part 2: Main function to populate and display a table of StateRow objects using a map.
  * 
  * The main function reads from a CSV file, populates a map with StateRow objects
  * indexed by state ID, and displays the final table of states with their easternmost, 

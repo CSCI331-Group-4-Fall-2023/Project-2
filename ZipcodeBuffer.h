@@ -121,7 +121,6 @@ class ZipcodeBuffer {
         */
         double getLongitude() const;
 
-        // A getter for the length attribute
         /**
          * \brief Getter for length
          * \pre ZipcodeBuffer object must exist

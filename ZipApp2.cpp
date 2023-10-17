@@ -7,17 +7,15 @@
 #include <fstream> // for file reading
 #include <unordered_map>
 #include <vector>
+/**
+ * \file ZipApp2.cpp
+ * \author Andrew Clayton and Tristan Adams
+ * \brief This is the file for Project 2 Part 2, giving zipcode information given a zipcode in the command line arguments.
+ */
 
 // Authors: Tristan Adams and Andrew Clayton
 using namespace std;
 
-/**
- * @brief Main function to populate and display a table of StateRow objects using a map.
- * 
- * -----------------------------------------------------------------------------------------------------
- * 
- * @return 0 on successful execution, -1 on error.
- */
 int main(int argc, char* argv[]) {
     // Makes a hashmap to hold zipcodes and the RRN (relative reference number) that go with them
     unordered_map<int, long> indexMap; 
