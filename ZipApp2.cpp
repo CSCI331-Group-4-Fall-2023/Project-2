@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
         indexFile << zipHolder.getZipcode() << " " << rrn << endl;
 
         //updating the rrn will be the last step of the loop
-        rrn += zipHolder.getLength() + rrn;
+        rrn += zipHolder.getLength() + 4;
     }
 
     // Display whatever zipcodes are indicated in the command line arguments
@@ -80,7 +80,6 @@ int main(int argc, char* argv[]) {
         }
         //once the vector is made we can search through the whole vector and display the record that the zipcode grabs from the index
         for (int i = 0; i < count; ++i) {
-            // cout << "Count: " << count << "\n";
             long long rnn = indexMap[zipCodeIntegers[i]];
 
             inFile.clear();
@@ -90,10 +89,9 @@ int main(int argc, char* argv[]) {
             inFile.seekg(rnn, ios::beg);
             string line_temp;
             getline(inFile, line_temp);
-            ZipcodeBuffer temp;
-            temp.setFromFile(line_temp);
-            cout << temp;
-            cout << rnn << "\n";
+            // ZipcodeBuffer temp;
+            // temp.setFromFile(line_temp);
+            // cout << temp;
             cout << line_temp;
            }
     }
