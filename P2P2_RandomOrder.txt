@@ -1,0 +1,55 @@
+Script started on 2023-10-16 20:50:36-05:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="191" LINES="17"]
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ cat This is the script file p[Kfor project 2, part 2, with the randomy ordereded [K[K[K length-indicated CSV
+[?2004lcat: This: No such file or directory
+cat: is: No such file or directory
+cat: the: No such file or directory
+cat: script: No such file or directory
+cat: file: No such file or directory
+cat: for: No such file or directory
+cat: project: No such file or directory
+cat: 2,: No such file or directory
+cat: part: No such file or directory
+cat: 2,: No such file or directory
+cat: with: No such file or directory
+cat: the: No such file or directory
+cat: randomy: No such file or directory
+cat: ordered: No such file or directory
+cat: length-indicated: No such file or directory
+cat: CSV: No such file or directory
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ cat This is the script file for project 2, part 2, with the randomy ordered length-indicated CSV[1P[1P[1P[1P[1@e[1@c[1@h[1@o[1@ 
+[?2004lThis is the script file for project 2, part 2, with the randomy ordered length-indicated CSV
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ cat ZipApp2.cpp | grep csv
+[?2004l    ifstream inFile("Length_R.[01;31m[Kcsv[m[K");
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ ecoh as you na[K[Kcan see, this uses random order. I'll now verify that iti[Ks [K[K[K[Kthat file is indeed randomly ordered
+[?2004l[?2004h> tail [K[K[K[K[K^C[?2004l[?2004h[?2004l
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ tail -n 10 Length_R.csv
+[?2004l4417237,Mont Alto,PA,Franklin,39.8417,-77.5537
+3874055,Owasso,OK,Tulsa,36.2863,-95.8222
+3871260,Marion,LA,Union,32.8716,-92.2862
+5492308,Apple Valley,CA,San Bernardino,34.4698,-117.1927
+3919956,Laurel,DE,Sussex,38.5537,-75.5631
+4438052,Middleton,TN,Hardeman,35.0818,-88.9046
+4225705,Huntington,WV,Cabell,38.4096,-82.369
+5493446,Paso Robles,CA,San Luis Obispo,35.6406,-120.7003
+4638950,Philipp,MS,Tallahatchie,33.7574,-90.2091
+492673,West Yarmouth,MA,Barnstable,41.6614,-70.2363
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ echo No [Kw I will compile and run a couple times to demonstarte[Kdemonsrate [Kdemonstrate the functionalities
+[?2004lNow I will compile and run a couple times to demonstrate the functionalities
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ g++ ZipApp2. [K[K -o ZipApp[K[K[K[K[K[Kfind
+[?2004l/usr/bin/ld: cannot find ZipApp2: No such file or directory
+collect2: error: ld returned 1 exit status
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ g++ ZipApp2.cpp -o find
+[?2004l[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ ./find 56301
+[?2004l56301, Saint Cloud, MN, Stearns, 45.541, 0
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ ./find 5603 [K[K[K301 61072 56401
+[?2004l56301, Saint Cloud, MN, Stearns, 45.541, 0
+61072, Rockton, IL, Winnebago, 42.4544, 0
+56401, Brainerd, MN, Crow Wing, 46.3502, 0
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ ./fin [Kd 999999
+[?2004lZipcode not found.
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ echo as [K[K[KAs you can see, the fun[K[K[Kprogram works perfectly and can ak[K[Ktake mutliple[K[K[K[K[K[Kltiple zipcodes in and identify ifo[K[Knfo, as well as recognie[Kze an invalid zipcode
+[?2004lAs you can see, the program works perfectly and can take multiple zipcodes in and identify info, as well as recognize an invalid zipcode
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ [?2004l
+exit
+
+Script done on 2023-10-16 20:53:32-05:00 [COMMAND_EXIT_CODE="0"]

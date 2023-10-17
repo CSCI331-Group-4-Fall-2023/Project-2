@@ -1,0 +1,86 @@
+Script started on 2023-10-16 20:54:38-05:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="191" LINES="17"]
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ echo Thisi s the [K[K[K[K[K[K[K[K is the script for project 2, part 1 w[K[K, with an ordered (length-indicated) CSV.
+[?2004lbash: syntax error near unexpected token `('
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ ecoh[K[Kho I will first show the csv file used in the progrma, then verify that it is ordered
+[?2004lI will first show the csv file used in the progrma, then verify that it is ordered
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ cat ip[K[KZipApp.cpp | grep csv
+[?2004l    ifstream inFile("Length.[01;31m[Kcsv[m[K");
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ tail -n 0[K10 Length.csv
+[?2004l5999919,Thorne Bay,AK,Prince of Wales-Hyder,55.6609,-132.5138
+5499921,Craig,AK,Prince of Wales-Hyder,55.4732,-133.1171
+5799922,Hydaburg,AK,Prince of Wales-Hyder,55.2087,-132.8259
+5499923,Hyder,AK,Prince of Wales-Hyder,55.9169,-130.0247
+5699925,Klawock,AK,Prince of Wales-Hyder,55.5526,-133.0555
+5899926,Metlakatla,AK,Prince of Wales-Hyder,55.1215,-131.579
+6099927,Point Baker,AK,Prince of Wales-Hyder,56.3528,-133.6211
+5499928,Ward Cove,AK,Ketchikan Gateway,55.3954,-131.6754
+5899929,Wrangell,AK,Wrangell-Petersburg (C,56.4335,-132.3529
+5499950,Ketchikan,AK,Ketchikan Gateway,55.3422,-131.6478
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ eh[Kcho Nwo[K[Kow I will om[K[Kcompile and ru [Kn to demonstrate functionality
+[?2004lNow I will compile and run to demonstrate functionality
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ g++ ZipApp.cpp -o P2P1O.t[K[K
+[?2004l[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ ./P2P1O
+[?2004lStateID, East Zip, West Zip, North Zip, South Zip
+AA | 34034 | 34034 | 34034 | 34034
+AK | 99501 | 99501 | 99723 | 99546
+AL | 35004 | 35004 | 35739 | 36547
+AP | 96208 | 96208 | 96507 | 96373
+AR | 71601 | 71601 | 72733 | 71749
+AZ | 85001 | 85001 | 86021 | 85620
+CA | 90001 | 90001 | 95567 | 92173
+CO | 80001 | 80001 | 81653 | 81138
+CT | 6001 | 6001 | 6079 | 6836
+DC | 20001 | 20001 | 20012 | 20375
+DE | 19701 | 19701 | 19810 | 19975
+FL | 32003 | 32003 | 32452 | 33040
+FM | 96941 | 96941 | 96941 | 96941
+GA | 30002 | 30002 | 30751 | 31562
+HI | 96701 | 96701 | 96722 | 96772
+IA | 50001 | 50001 | 52160 | 52632
+ID | 83201 | 83201 | 83826 | 83237
+IL | 60001 | 60001 | 60075 | 62914
+IN | 46001 | 46001 | 46530 | 47635
+KS | 66002 | 66002 | 66955 | 66778
+KY | 40003 | 40003 | 41074 | 42049
+LA | 70001 | 70001 | 71075 | 70081
+MA | 1001 | 1001 | 1913 | 2564
+MD | 20601 | 20601 | 21088 | 21866
+ME | 3901 | 3901 | 4741 | 3904
+MH | 96960 | 96960 | 96970 | 96960
+MI | 48001 | 48001 | 49918 | 49232
+MN | 55001 | 55001 | 56711 | 55931
+MO | 63005 | 63005 | 63535 | 63829
+MP | 96950 | 96950 | 96951 | 96952
+MS | 38601 | 38601 | 38671 | 39558
+MT | 59001 | 59001 | 59484 | 59739
+NC | 27006 | 27006 | 28631 | 28468
+ND | 58001 | 58001 | 58255 | 58043
+NE | 68001 | 68001 | 69365 | 68325
+NH | 3031 | 3031 | 3592 | 3062
+NJ | 7001 | 7001 | 7827 | 8212
+NM | 87001 | 87001 | 87418 | 88063
+NV | 88901 | 88901 | 89404 | 89029
+NY | 501 | 501 | 12979 | 10307
+OH | 43001 | 43001 | 44030 | 45680
+OK | 73001 | 73001 | 74072 | 74747
+OR | 97001 | 97001 | 97121 | 97635
+PA | 15001 | 15001 | 16428 | 19351
+PW | 96940 | 96940 | 96940 | 96940
+RI | 2801 | 2801 | 2824 | 2807
+SC | 29001 | 29001 | 29356 | 29915
+SD | 57001 | 57001 | 57645 | 57049
+TN | 37010 | 37010 | 37119 | 37396
+TX | 73301 | 73301 | 79051 | 78522
+UT | 84001 | 84001 | 84331 | 84784
+VA | 20101 | 20101 | 22625 | 24580
+VT | 5001 | 5001 | 5902 | 5352
+WA | 98001 | 98001 | 98231 | 98671
+WI | 53001 | 53001 | 54850 | 53102
+WV | 24701 | 24701 | 26050 | 24884
+WY | 82001 | 82001 | 82423 | 82321
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ echo As you cn [K[Kan see, thi [Ks owrks [Kworks pere[Kfectly regardless of th[K[Khow the rows are ordered!
+[?2004lAs you can see, this works perfectly regardless of how the rows are ordered!
+[?2004h]0;andrew@AC2002L23: ~/SCSU/CSCI331/Group Project 2[01;32mandrew@AC2002L23[00m:[01;34m~/SCSU/CSCI331/Group Project 2[00m$ [?2004l
+exit
+
+Script done on 2023-10-16 20:56:06-05:00 [COMMAND_EXIT_CODE="0"]

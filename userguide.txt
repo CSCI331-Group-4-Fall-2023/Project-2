@@ -1,0 +1,22 @@
+user guide for program
+
+ZipApp2 is a program that deals with creating an index for ease of access to a data file of zipcode data
+the only part the user needs to interact with is compilation and two command line inputs as well as knowing the zip code they want to search for
+
+to run the program enter the file path it is in on the command line and type 
+
+g++ ZipApp2.cpp -o find
+
+into the consol followed by
+
+./find
+
+on the ./find line in the consol add a space and begin entering the zipcodes you want to look for eg"56301" 
+
+so finished it would look like 
+
+g++ ZipApp2.cpp -o find
+./find 56301 65402
+
+you can enter in any number of zip codes
+
