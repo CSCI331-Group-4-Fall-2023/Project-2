@@ -7,17 +7,15 @@
 #include <fstream> // for file reading
 #include <unordered_map>
 #include <vector>
+/**
+ * \file ZipApp2.cpp
+ * \author Andrew Clayton and Tristan Adams
+ * \brief This is the file for Project 2 Part 2, giving zipcode information given a zipcode in the command line arguments.
+ */
 
 // Authors: Tristan Adams and Andrew Clayton
 using namespace std;
 
-/**
- * @brief Main function to populate and display a table of StateRow objects using a map.
- * 
- * -----------------------------------------------------------------------------------------------------
- * 
- * @return 0 on successful execution, -1 on error.
- */
 int main(int argc, char* argv[]) {
     // Makes a hashmap to hold zipcodes and the RRN (relative reference number) that go with them
     unordered_map<int, long> indexMap; 
@@ -89,23 +87,12 @@ int main(int argc, char* argv[]) {
         }
         //once the vector is made we can search through the whole vector and display the record that the zipcode grabs from the index
         for (int i = 0; i < count; ++i) {
-            // long rnn = indexMap[zipCodeIntegers[i]];
 
-            // inFile.clear();
-            // inFile.seekg(0, ios::beg); //resetting the pointer to the start of the file
-
-
-            // inFile.seekg(rnn, ios::beg);
-            // string line_temp;
-            // getline(inFile, line_temp);
-            // // ZipcodeBuffer temp;
-            // // temp.setFromFile(line_temp);
-            // // cout << temp;
-            // cout << line_temp << "\n";
-
-            // cout << "Zip: " << zipCodeIntegers[i] << ", RRN: " << rnn << endl;
-            cout << zipMap[zipCodeIntegers[i]] << endl;
-            if 
+            if (zipMap.find(zipCodeIntegers[i]) != zipMap.end()) {
+                cout << zipMap[zipCodeIntegers[i]] << endl;
+            } else {
+                cout << "Zipcode not found.\n";
+            }            
            }
     }
 
