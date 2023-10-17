@@ -20,7 +20,8 @@ using namespace std;
  */
 int main(int argc, char* argv[]) {
     // Makes a hashmap to hold zipcodes and the RRN (relative reference number) that go with them
-    unordered_map<int, long long> indexMap; 
+    unordered_map<int, long> indexMap; 
+    unordered_map<int, ZipcodeBuffer> zipMap;
 
     // Buffer to extract CSV data
     ZipcodeBuffer zipHolder; 
@@ -36,27 +37,35 @@ int main(int argc, char* argv[]) {
     string line;
 
     // Creating new file for Index file (assuming there is not already one)
+    // Open an output file stream to write the index
     ofstream indexFile("indexFile.txt");
+    if (!indexFile) {
+        cout << "Error: Unable to open index file for writing." << endl;
+        return -1;  // This might need adjustment based on your main() function structure
+    }
 
-    long long rrn = 0; 
+    long rrn = inFile.tellg();  // Start by getting the current position of the file
+
     while (getline(inFile, line)) {
-        // Skip header line
-        if(first) {
+        // If it's the first line, consider it as a header and skip
+        if (first) {
             zipHolder.setHeaderMap(line);
             first = false;
             continue;
         }
 
-        // Set values from the current CSV line
+        // Populate the ZipcodeBuffer from the line
         zipHolder.setFromFile(line);
+        zipMap[zipHolder.getZipcode()] = zipHolder;
 
+        // Store the current rrn into the hashmap
         indexMap[zipHolder.getZipcode()] = rrn;
 
-        // Write the key and value to an index file
+        // Write the zipcode and its rrn to the index file
         indexFile << zipHolder.getZipcode() << " " << rrn << endl;
 
-        //updating the rrn will be the last step of the loop
-        rrn += zipHolder.getLength() + 4;
+        // Update rrn to point to the start of the next line/record
+        rrn = inFile.tellg();
     }
 
     // Display whatever zipcodes are indicated in the command line arguments
@@ -80,19 +89,23 @@ int main(int argc, char* argv[]) {
         }
         //once the vector is made we can search through the whole vector and display the record that the zipcode grabs from the index
         for (int i = 0; i < count; ++i) {
-            long long rnn = indexMap[zipCodeIntegers[i]];
+            // long rnn = indexMap[zipCodeIntegers[i]];
 
-            inFile.clear();
-            inFile.seekg(0, ios::beg); //resetting the pointer to the start of the file
+            // inFile.clear();
+            // inFile.seekg(0, ios::beg); //resetting the pointer to the start of the file
 
 
-            inFile.seekg(rnn, ios::beg);
-            string line_temp;
-            getline(inFile, line_temp);
-            // ZipcodeBuffer temp;
-            // temp.setFromFile(line_temp);
-            // cout << temp;
-            cout << line_temp;
+            // inFile.seekg(rnn, ios::beg);
+            // string line_temp;
+            // getline(inFile, line_temp);
+            // // ZipcodeBuffer temp;
+            // // temp.setFromFile(line_temp);
+            // // cout << temp;
+            // cout << line_temp << "\n";
+
+            // cout << "Zip: " << zipCodeIntegers[i] << ", RRN: " << rnn << endl;
+            cout << zipMap[zipCodeIntegers[i]] << endl;
+            if 
            }
     }
 
